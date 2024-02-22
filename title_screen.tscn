@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqhuvfhk7uhu3"]
+
+[ext_resource type="Texture2D" uid="uid://co5xh1i12jhc1" path="res://title_screen.jpeg" id="1_v4a5u"]
+[ext_resource type="Script" path="res://title_screen.gd" id="1_vevvi"]
+
+[sub_resource type="SystemFont" id="SystemFont_piq3m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4unm7"]
+font = SubResource("SystemFont_piq3m")
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+outline_size = 30
+
+[sub_resource type="SystemFont" id="SystemFont_h3hy8"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_vevvi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 656.0
+texture = ExtResource("1_v4a5u")
+expand_mode = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -302.5
+offset_right = 302.5
+offset_bottom = 318.0
+grow_horizontal = 2
+alignment = 1
+vertical = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cumhither"
+label_settings = SubResource("LabelSettings_4unm7")
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="playBTN" type="Button" parent="BoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_h3hy8")
+theme_override_font_sizes/font_size = 30
+text = "Swag I wanna Play"
+
+[node name="HSeparator" type="HSeparator" parent="BoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="BoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="quitBTN" type="Button" parent="BoxContainer/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Nah Let me out of here"
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer2/MarginContainer/playBTN" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer2/MarginContainer2/quitBTN" to="." method="_on_quit_btn_pressed"]
