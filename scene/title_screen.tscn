@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqhuvfhk7uhu3"]
 
-[ext_resource type="Texture2D" uid="uid://co5xh1i12jhc1" path="res://title_screen.jpeg" id="1_v4a5u"]
-[ext_resource type="Script" path="res://title_screen.gd" id="1_vevvi"]
+[ext_resource type="Script" path="res://title_screen.gd" id="1_yhwvr"]
+[ext_resource type="Texture2D" uid="uid://co5xh1i12jhc1" path="res://src/title_screen.jpeg" id="2_wvu37"]
 
 [sub_resource type="SystemFont" id="SystemFont_piq3m"]
 
@@ -22,26 +22,37 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_vevvi")
+script = ExtResource("1_yhwvr")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 656.0
-texture = ExtResource("1_v4a5u")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wvu37")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
+layout_direction = 1
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -302.5
-offset_right = 302.5
-offset_bottom = 318.0
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -307.0
+offset_right = 207.0
+offset_bottom = 307.0
 grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 vertical = true
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2

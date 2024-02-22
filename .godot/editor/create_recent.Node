@@ -1,3 +1,7 @@
+Control
+AspectRatioContainer
+Camera2D
+Sprite2D
 HSeparator
 MarginContainer
 VBoxContainer
@@ -6,6 +10,5 @@ HBoxContainer
 Button
 TextureButton
 TextureRect
-Control
 Container
 BoxContainer
