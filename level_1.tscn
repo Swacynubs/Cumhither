@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://uxxdi5kgohw"]
+
+[ext_resource type="Texture2D" uid="uid://bimovboco7iyj" path="res://src/Track1.png.png" id="1_1mupe"]
+[ext_resource type="Script" path="res://Car.gd" id="2_1ofp3"]
+[ext_resource type="Texture2D" uid="uid://c5s4hay1ytj24" path="res://src/car.png.png" id="3_i0klf"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(130, 128)
+scale = Vector2(0.75, 0.75)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(129, 129)
+texture = ExtResource("1_1mupe")
+metadata/_edit_lock_ = true
+
+[node name="Inside" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(130, 48, 141, 55, 159, 78, 174, 105, 185, 142, 184, 169, 177, 189, 164, 200, 144, 205, 133, 206, 105, 204, 80, 204, 72, 198, 59, 181, 48, 158, 47, 120, 46, 81, 54, 61, 65, 38, 114, 43)
+
+[node name="Outside" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(256, 1, 256, 256, 2, 256, 1, 2, 46, 24, 32, 44, 23, 82, 25, 130, 27, 172, 39, 210, 73, 234, 121, 236, 148, 227, 185, 226, 198, 209, 211, 162, 208, 111, 201, 69, 184, 47, 112, 15, 78, 12, 47, 18, 47, 24, 3, 1, 35, 1)
+
+[node name="Car" type="CharacterBody2D" parent="."]
+position = Vector2(188, 99)
+script = ExtResource("2_1ofp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Car"]
+texture = ExtResource("3_i0klf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Car"]
+polygon = PackedVector2Array(8, -6.4, 8, 8, -8, 8, -8, -7, -6.6, -7, -5.1, -8, 3.3, -8)
+metadata/_edit_lock_ = true
