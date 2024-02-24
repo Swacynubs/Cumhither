@@ -3,3 +3,5 @@ res://title_screen.gd
 res://scene/title_screen.tscn
 res://scene/level_1.tscn
 res://scene/car_cpu.tscn
+res://scene/level_2.tscn
+res://scene/car_cpu.gd

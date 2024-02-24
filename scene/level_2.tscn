@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx2xqvej2uggf"]
+
+[ext_resource type="Texture2D" uid="uid://yd7jaqpsgoc0" path="res://src/level_2.png" id="1_0tihq"]
+[ext_resource type="PackedScene" uid="uid://beccrqkqae01u" path="res://scene/car_cpu.tscn" id="2_b6y5x"]
+
+[sub_resource type="Curve2D" id="Curve2D_3badr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 54, -271, -43.4216, -14.4739, 43.4216, 14.4739, 188, -245, 17.7422, -37.3519, -17.7422, 37.3519, 198, -140, -24.7457, -50.4251, 24.7457, 50.4251, 194, -13, 0, 0, 0, 0, 146, 35, 0, 0, 0, 0, 45, 46, 0, 0, 0, 0, 1, 43, 0, 0, 0, 0, -47, 2, 0, 0, 0, 0, -66, -69, 5.60279, 25.6795, -5.60279, -25.6795, -74, -134, 46.6899, -0.466899, -46.6899, 0.466899, -127, -154, 0, 0, 0, 0, -173, -117, 0, 0, 0, 0, -169, -51, 0, 0, 0, 0, -158, 19, 0, 0, 0, 0, -138, 59, 0, 0, 0, 0, -114, 80, 0, 0, 0, 0, -77, 95, 0, 0, 0, 0, 42, 104, 0, 0, 0, 0, 165, 110, 0, 0, 0, 0, 214, 118, 0, 0, 0, 0, 229, 148, 0, 0, 0, 0, 230, 172, 5.60279, -57.8955, -5.60279, 57.8955, 228, 201, 0, 0, 0, 0, 194, 213, 0, 0, 0, 0, 174, 191, 21.0105, 3.73519, -21.0105, -3.73519, 152, 170, 0, 0, 0, 0, 130, 203, 0, 0, 0, 0, 127, 238, 0, 0, 0, 0, 102, 257, 0, 0, 0, 0, 46, 259, 0, 0, 0, 0, 1, 235, 0, 0, 0, 0, -33, 200, 31.7492, -0.933799, -31.7492, 0.933799, -66, 188, 26.6133, 10.7387, -26.6133, -10.7387, -112, 252, 32.683, 5.60279, -32.683, -5.60279, -183, 199, 37.8188, 14.4739, -37.8188, -14.4739, -249, 255, 0, 0, 0, 0, -286, 189, 0, 0, 0, 0, -289, -14, 0, 0, 0, 0, -287, -77, 0, 0, 0, 0, -280, -183, -28.014, 29.4147, 28.014, -29.4147, -258, -257, 0, 0, 0, 0, 35, -273, 0, 0, 0, 0, 54, -271)
+}
+point_count = 43
+
+[node name="level_2" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_0tihq")
+
+[node name="Path2D" type="Path2D" parent="Area2D"]
+curve = SubResource("Curve2D_3badr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Area2D/Path2D"]
+position = Vector2(54, -271)
+rotation = 0.191648
+
+[node name="carCPU" parent="Area2D/Path2D/PathFollow2D" instance=ExtResource("2_b6y5x")]
+position = Vector2(-12.5715, 3.45791)
+rotation = 1.46939
+scale = Vector2(0.04, 0.04)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)

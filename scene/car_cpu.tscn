@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://beccrqkqae01u"]
+[gd_scene load_steps=3 format=3 uid="uid://beccrqkqae01u"]
 
-[node name="carCPU" type="Node2D"]
+[ext_resource type="Script" path="res://scene/car_cpu.gd" id="1_33jmx"]
+[ext_resource type="Texture2D" uid="uid://dwp2x4vgf30lu" path="res://src/car_cpu.png" id="1_to0d6"]
+
+[node name="carCPU" type="CharacterBody2D"]
+script = ExtResource("1_33jmx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+rotation = -0.000610843
+scale = Vector2(20.8795, 20.08)
+polygon = PackedVector2Array(6, -14.1, 12, -10.1, 12, 7, 10.2, 7, 8.2, 11, -6.8, 11, -10, 7.8, -10, 5, -11.1, -11, -8.7, -11, -5, -14, -5, -16, 6, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(25, 25)
+texture = ExtResource("1_to0d6")

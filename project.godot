@@ -12,7 +12,13 @@ config_version=5
 
 config/name="Cumhither"
 run/main_scene="res://level_1.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [input]
 
